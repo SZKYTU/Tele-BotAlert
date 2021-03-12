@@ -1,7 +1,6 @@
 from dotenv import load_dotenv
 import websockets
 import asyncio
-import time
 import json
 import os
 
@@ -36,6 +35,7 @@ async def cryptocompare():
 class SocketData:
     def __init__(self, price, crypto):
         self.price = cryptocompare.BTC_price
+        self.crypto = cryptocompare.crypto_name
 
 
 asyncio.get_event_loop().run_until_complete(cryptocompare())
